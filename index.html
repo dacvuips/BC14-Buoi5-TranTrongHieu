@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- // BÀI 1 :QUẢN LÝ SINH VIÊN -->
+            <div class="col-6 my-5">
+                <div class="card w-100 mx-auto p-3">
+                    <h5 class="card-header bg-primary text-center text-white">
+                        QUẢN LÝ SINH VIÊN
+                    </h5>
+                    <div class="card-body"></div>
+
+                    <div class="form-group">
+                        <label for="point1">Điểm 1:</label>
+                        <input type="number" class="form-control" id="point1" placeholder="Nhập điểm" />
+                    </div>
+                    <div class="form-group">
+                        <label for="point2">Điểm 2:</label>
+                        <input type="number" class="form-control" id="point2" placeholder="Nhập điểm" />
+                    </div>
+                    <div class="form-group">
+                        <label for="point3">Điểm 3:</label>
+                        <input type="number" class="form-control" id="point3" placeholder="Nhập điểm" />
+                    </div>
+                    <div class="form-group">
+                        <label for="benchmark">Điểm chuẩn:</label>
+                        <input type="number" class="form-control" id="benchmark" placeholder="Nhập điểm" />
+                    </div>
+                    <!-- KHU VỰC ƯU TIÊN -->
+                    <div class="border mb-3">
+                        <p>Khư vực ưu tiên:</p>
+                        <div class="row flex-column ml-3">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="point" id="areaA" value="option1" />
+                                <label class="custom-control-label" for="areaA">
+                    Khu vực A
+                  </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="point" id="areaB" value="option1" />
+                                <label class="custom-control-label" for="areaB">
+                    Khu vực B
+                  </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="point" id="areaC" value="option1" />
+                                <label class="custom-control-label" for="areaC">
+                    Khu vực C
+                  </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="areaX">Không thuộc khu vực nhập (X):</label>
+                                <input type="text" class="form-control w-50" id="areaX" name="point" placeholder="Nhập X" checked />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ĐỐI TƯỢNG ƯU TIÊN -->
+                    <div class="border mb-3">
+                        <p>Đối tượng ưu tiên:</p>
+                        <div class="row flex-column ml-3">
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="object" id="object1" value="option1" />
+                                <label class="custom-control-label" for="object1">
+                    Đối tượng 1
+                  </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="object" id="object2" value="option1" />
+                                <label class="custom-control-label" for="object2">
+                    Đối tượng 2
+                  </label>
+                            </div>
+                            <div class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="object" id="object3" value="option1" />
+                                <label class="custom-control-label" for="object3">
+                    Đối tượng 3
+                  </label>
+                            </div>
+                            <div class="form-group">
+                                <label for="object0">Không thuộc đối tượng nhập (0):</label>
+                                <input type="number" class="form-control w-50" id="object0" placeholder="Nhập 0" />
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="result" class="btn btn-success">
+              Kết quả
+            </button>
+
+                    <div id="resultFinsh" class="text-center mt-5">
+                        <table>
+                            <tr>
+                                <th>Điểm 1</th>
+                                <th>Điểm 2</th>
+                                <th>Điểm 3</th>
+                                <th>Điểm ưu tiên KV</th>
+                                <th>Điểm ưu tiên đôi tượng</th>
+                                <th>Điểm chuẩn</th>
+                                <th>Tổng điểm</th>
+                                <th>Kết quả</th>
+                            </tr>
+                            <tr>
+                                <td id="resultP1">0</td>
+                                <td id="resultP2">0</td>
+                                <td id="resultP3">0</td>
+                                <td id="resultArea">0</td>
+                                <td id="resultObject">0</td>
+                                <td id="resultBenchmark">0</td>
+                                <td id="resultTotal">0</td>
+                                <td id="resultP">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- // BÀI 2 :TÍNH TIỀN ĐIỆN -->
+            <div class="col-6 my-5">
+                <div class="card w-100 mx-auto p-3">
+                    <h5 class="card-header bg-primary text-center text-white">
+                        TÍNH TIỀN ĐIỆN
+                    </h5>
+                    <div class="card-body"></div>
+
+                    <div class="form-group">
+                        <label for="electriName">Họ và tên:</label>
+                        <input type="text" class="form-control" id="electriName" placeholder="Vui lòng nhập họ và tên" />
+                    </div>
+                    <div class="form-group">
+                        <label for="electriNumber">Mức tiêu thụ Kw:</label>
+                        <input type="number" class="form-control" id="electriNumber" placeholder="Nhập số KW tiêu thụ" />
+                    </div>
+
+                    <button type="button" id="results" class="btn btn-success">
+              Kết quả
+            </button>
+
+                    <div id="resultFinshs" class="text-center mt-5">
+                        <table>
+                            <tr>
+                                <th>Họ và tên</th>
+                                <th>Số KW tiêu thụ</th>
+                                <th>Tổng tiền</th>
+                            </tr>
+                            <tr>
+                                <td id="P1">0</td>
+                                <td id="P2">0</td>
+                                <td id="P3">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+</body>
+
+</html>
